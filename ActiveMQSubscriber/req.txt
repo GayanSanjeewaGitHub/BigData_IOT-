@@ -1,0 +1,4 @@
+stomp-py
+paho-mqtt
+numpy
+pandas
