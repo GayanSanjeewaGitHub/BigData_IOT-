@@ -66,7 +66,7 @@ def send_message():
         while True:
             # Generate your parameters
             request_id = f"REQ{int(time.time() * 1000)}"
-            selected_departments = random.sample(departments, k=random.randint(1, 5))  # Randomly choose 1 to 5 departments
+            selected_departments = random.sample(departments, k=random.randint(1, 30))  # Randomly choose 1 to 90 departments
             user_issue = random.choice(user_issues)  # Randomly choose a user issue
 
             # Create message with parameters
@@ -75,6 +75,8 @@ def send_message():
             # Send message to the topic
             conn.send(body=message, destination=topic_name)
             print(f"Message sent: {message}")
+            print("")
+            print("")
 
             # Sleep for 10 seconds (10000 milliseconds)
             time.sleep(0.5)
