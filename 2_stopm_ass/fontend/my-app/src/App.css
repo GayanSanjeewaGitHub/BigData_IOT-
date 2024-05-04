@@ -1,0 +1,60 @@
+/* App.css */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 1500px; /* Increased width with units */
+  background-color: #859be5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.joinBtn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: rgb(6, 2, 35);
+  border: 1px solid #007bff; /* Corrected border declaration */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ChatBox {
+  max-height: 600px; /* Increased height with units */
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.ChatMessage {
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.MessageInput form {
+  display: flex;
+}
+
+.MessageInput input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.MessageInput button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #0044cc; /* Dark blue color */
+  color: rgb(118, 179, 216);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}

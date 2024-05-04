@@ -4,17 +4,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
+import com.sender.sender.component.ChatRoomService;
+
+import lombok.Synchronized;
+
 @Service
 public class SendMessageService {
-	
-	@Autowired
-	JmsTemplate jmsTemplate;
-	
-	public static String destination = "learning";
-	
-	public void sendMsg(String message) {
-		jmsTemplate.convertAndSend(destination, message);
-		System.out.print("Message is service"+message);
-	}
 
+	@Autowired
+	private JmsTemplate jmsTemplate;
+
+	@Autowired
+	private ReceiverService receiverService;
+
+	@Autowired
+	private ChatRoomService chatRoomService;
+
+	public void sendMsg(String id, String name, String chatRoom, String message) {
+
+		System.out.println("Message sent for chatRoom: " + chatRoom + " details: " + id + ":" + name + ":" + message);
+		jmsTemplate.convertAndSend(chatRoom, id + ":" + name + ":" + message + ":" + chatRoom);
+		// receiverService.subscribeToRooms(id);
+
+	}
 }
